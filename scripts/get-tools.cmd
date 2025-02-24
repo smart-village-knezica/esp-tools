@@ -6,10 +6,10 @@ if defined MSYSTEM (
 )
 
 :: Download the tools from the server
-call curl -LO https://github.com/smart-village-knezica/esp-tools/releases/download/v0.1.0-rc1/windows-tools-v0.1.0.zip
+call curl -LO https://github.com/smart-village-knezica/esp-tools/releases/download/v0.1.1/windows-tools-v0.1.1.zip
 :: Extract to the current location
-call tar -xf windows-tools-v0.1.0.zip
+call tar -xf windows-tools-v0.1.1.zip
 :: Remove the ZIP archive
-if exist windows-tools-v0.1.0.zip (
-    del windows-tools-v0.1.0.zip
+if exist windows-tools-v0.1.1.zip (
+    del windows-tools-v0.1.1.zip
 )
