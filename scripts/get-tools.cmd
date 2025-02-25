@@ -13,3 +13,4 @@ call tar -xf windows-tools-v0.1.1.zip
 if exist windows-tools-v0.1.1.zip (
     del windows-tools-v0.1.1.zip
 )
+
