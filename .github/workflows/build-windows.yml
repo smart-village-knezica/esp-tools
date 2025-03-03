@@ -39,8 +39,12 @@ jobs:
  
       - name: Get ESP-IDF version
         shell: cmd
-        run: scripts\test.cmd version
+        run: |
+          dir
+          scripts\test.cmd version
 
       - name: Build ESP-IDF blink example
         shell: cmd
-        run: scripts\test.cmd build
+        run: |
+          dir
+          scripts\test.cmd build
