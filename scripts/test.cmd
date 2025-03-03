@@ -24,7 +24,6 @@ set PATH=%IDF_TOOLS_PATH%;%PATH%
 set IDF_PATH=X:\esp-idf
 set IDF_PYTHON=X:\windows\python_env\idf5.4_py3.11_env\Scripts\python.exe
 set IDF_GIT=X:\windows\tools\idf-git\2.44.0\cmd\git.exe
-set ESP_AUTOFLASH=%drive_letter%\aquaterrius\scripts\esp_autoflash.py
 
 set PREFIX=%IDF_PYTHON% %IDF_PATH%
 DOSKEY idf.py=%PREFIX%\tools\idf.py $*

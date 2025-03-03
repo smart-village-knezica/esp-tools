@@ -18,7 +18,6 @@ IDF_PATH="$PROJECT_ROOT/esp-idf"
 IDF_PYTHON="$PROJECT_ROOT/linux/python_env/idf5.4_py3.11_env/bin/python"
 IDF_PY="$IDF_PATH/tools/idf.py"
 ESPTOOL_PY="$IDF_PATH/components/esptool_py/esptool/esptool.py"
-ESP_AUTOFLASH="$PROJECT_ROOT/aquaterrius/scripts/esp_autoflash.py"
 
 if [ "$arg1" = "version" ]; then
     echo "Building example..."
