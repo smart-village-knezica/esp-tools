@@ -32,7 +32,7 @@ jobs:
       - name: Install the tools for Linux platform if not cached
         run: |
           ls -la
-          if [ ! -d "linux" ]; then scripts/get-tools.sh fi
+          [ ! -d linux ] && scripts/get-tools.sh
  
       - name: Get ESP-IDF version
         run: |
