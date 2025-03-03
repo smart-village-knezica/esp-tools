@@ -1,0 +1,41 @@
+# This is a workflow used for automated build on Linux platform
+name: build-linux
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    # Uncomment the line below to disable the build job
+    #if: ${{ false }}
+    runs-on: ubuntu-latest    
+    steps:
+      - name: Checkout esp-tools repository
+        uses: actions/checkout@v4
+
+      - name: Checkout ESP-IDF v5.4 repository with submodules recursively
+        uses: actions/checkout@v4
+        with:
+          repository: espressif/esp-idf
+          ref: v5.4
+          submodules: recursive
+          path: esp-idf
+ 
+      - name: Cache the tools
+        uses: actions/cache@v4
+        with:
+          path: linux
+          key: ${{ runner.os }}-esp-tools
+      - name: Install the tools for Linux platform if not cached
+        run: |
+          ls -la
+          if [ ! -d "linux" ]; then scripts/get-tools.sh fi
+ 
+      - name: Get ESP-IDF version
+        run: scripts/test.sh version
+
+      - name: Build ESP-IDF blink example
+        run: scripts/test.sh build
