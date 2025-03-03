@@ -35,7 +35,11 @@ jobs:
           if [ ! -d "linux" ]; then scripts/get-tools.sh fi
  
       - name: Get ESP-IDF version
-        run: scripts/test.sh version
+        run: |
+          ls -la
+          scripts/test.sh version
 
       - name: Build ESP-IDF blink example
-        run: scripts/test.sh build
+        run: |
+          ls -la
+          scripts/test.sh build
