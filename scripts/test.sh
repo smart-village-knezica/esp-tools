@@ -17,6 +17,11 @@ PROJECT_ROOT="$SCRIPT_ROOT/.."
 echo "Exporting enviornment variables..."
 source scripts/export_variables.sh
 
+echo "Printing tools location"
+which ninja
+which cmake
+which python
+
 IDF_PATH="$PROJECT_ROOT/esp-idf"
 IDF_PYTHON="$PROJECT_ROOT/linux/python_env/idf5.4_py3.11_env/bin/python"
 IDF_PY="$IDF_PATH/tools/idf.py"
