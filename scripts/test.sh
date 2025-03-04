@@ -1,6 +1,7 @@
 #!/bin/bash
 
-PROJECT_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+PROJECT_ROOT="$SCRIPT_ROOT/.."
 
 # Modify pyvenv.cfg to match new environment
 (
@@ -12,7 +13,7 @@ PROJECT_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd 
 ) > "$PROJECT_ROOT/linux/python_env/idf5.4_py3.11_env/pyvenv.cfg"
 
 echo "Exporting enviornment variables..."
-source export_variables.sh
+source scripts/export_variables.sh
 
 IDF_PATH="$PROJECT_ROOT/esp-idf"
 IDF_PYTHON="$PROJECT_ROOT/linux/python_env/idf5.4_py3.11_env/bin/python"
