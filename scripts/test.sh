@@ -1,5 +1,7 @@
 #!/bin/bash
 
+arg1=$1
+
 SCRIPT_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PROJECT_ROOT="$SCRIPT_ROOT/.."
 
@@ -21,6 +23,13 @@ IDF_PY="$IDF_PATH/tools/idf.py"
 ESPTOOL_PY="$IDF_PATH/components/esptool_py/esptool/esptool.py"
 
 if [ "$arg1" = "version" ]; then
+    echo "Getting ESP-IDF version..."
+    source "$PROJECT_ROOT/esp-idf/export.sh"
+    $IDF_PYTHON $IDF_PY --version
+    exit
+fi
+
+if [ "$arg1" = "build" ]; then
     echo "Building example..."
     source "$PROJECT_ROOT/esp-idf/export.sh"
     cd "$PROJECT_ROOT/esp-idf/examples/get-started/blink"
