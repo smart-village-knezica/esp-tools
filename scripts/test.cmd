@@ -13,7 +13,7 @@ echo Print current directory
 echo %~dp0
 
 echo Creating a new virtual drive...
-subst X: %~dp0
+subst X: %~dp0\..
 
 :: Modify pyvenv.cfg to match new environment
 (
