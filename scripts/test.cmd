@@ -7,6 +7,11 @@ if defined MSYSTEM (
 
 SETLOCAL EnableDelayedExpansion
 
+set arg1=%~1
+
+echo Print current directory
+echo %~dp0
+
 echo Creating a new virtual drive...
 subst X: %~dp0
 
@@ -58,8 +63,10 @@ set IDF_GIT_DIR=X:\windows\tools\idf-git\2.44.0\cmd
 set "PATH=%IDF_PYTHON_DIR%;%IDF_GIT_DIR%;%PATH%"
 echo Using Python in %IDF_PYTHON_DIR%
 %IDF_PYTHON% --version
+where python
 echo Using Git in %IDF_GIT_DIR%
 %IDF_GIT% --version
+where git
 
 if not "%USERNAME%"=="%USERNAME: =%" (
     echo Username contains spaces, renaming it to esp...
