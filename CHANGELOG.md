@@ -1,5 +1,15 @@
 # Changelog
 
+## Development
+
+### Added
+
+### Changed
+
+### Fixed
+
+### Known Issues
+
 ## v1.0.0
 
 ### Added
